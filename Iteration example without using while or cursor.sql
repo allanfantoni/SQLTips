@@ -1,4 +1,4 @@
--- Iteration example without using while or cursor
+-- Iteration examples without using while or cursor
 
 if (object_id('tempdb..#Produtos') is not null) drop table #Produtos
 create table #Produtos (
@@ -67,3 +67,13 @@ select
 	sum(Qt_Vendas_No_Mes) over(order by Periodo rows between unbounded preceding and current row) as Qt_Vendas_Acumuladas
 from
 	#Vendas_Agrupadas
+
+-- Another example
+
+declare @SQL2 varchar(max) = ''
+
+select @SQL2 += 'TRUNCATE TABLE [' + B.[name] + '].[' + A.[name] + ']; '
+from sys.tables A
+join sys.schemas B on B.[schema_id] = A.[schema_id]
+
+select @SQL2
