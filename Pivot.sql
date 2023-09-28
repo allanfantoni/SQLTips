@@ -1,5 +1,7 @@
 -- Pivot
 
+USE [AdventureWorksDW2019]
+
 IF (OBJECT_ID('tempdb..#Teste') is not null) drop table #Teste
 SELECT
     YEAR(OrderDate) as Ano,

@@ -17,18 +17,18 @@ create table #Vendas (
 
 insert into #Produtos (Ds_Produto, Ds_Categoria, Preco )
 values
-	('Processador i7', 'Informática', 1500.00 ),
-	('Processador i5', 'Informática', 1000.00 ),
-	('Processador i3', 'Informática', 500.00 ),
-	('Placa de Vídeo Nvidia', 'Informática', 2000.00 ),
-	('Placa de Vídeo Radeon', 'Informática', 1500.00 ),
+	('Processador i7', 'Informatica', 1500.00 ),
+	('Processador i5', 'Informatica', 1000.00 ),
+	('Processador i3', 'Informatica', 500.00 ),
+	('Placa de Video Nvidia', 'Informatica', 2000.00 ),
+	('Placa de Video Radeon', 'Informatica', 1500.00 ),
 	('Celular Apple', 'Celulares', 10000.00 ),
 	('Celular Samsung', 'Celulares', 2500.00 ),
 	('Celular Sony', 'Celulares', 4200.00 ),
 	('Celular LG', 'Celulares', 1000.00 ),
 	('Cama', 'Utilidades do Lar', 2000.00 ),
 	('Toalha', 'Utilidades do Lar', 40.00 ),
-	('Lençol', 'Utilidades do Lar', 60.00 ),
+	('Lencol', 'Utilidades do Lar', 60.00 ),
 	('Cadeira', 'Utilidades do Lar', 200.00 ),
 	('Mesa', 'Utilidades do Lar', 1000.00 ),
 	('Talheres', 'Utilidades do Lar', 50.00 )
