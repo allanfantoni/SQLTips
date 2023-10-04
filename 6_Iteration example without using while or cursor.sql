@@ -1,4 +1,5 @@
 -- Iteration examples without using while or cursor
+-- While example
 
 if (object_id('tempdb..#Produtos') is not null) drop table #Produtos
 create table #Produtos (
@@ -47,6 +48,8 @@ end
 
 select * from #Vendas
 
+-- Using Window Function
+
 if (object_id('tempdb..#Vendas_Agrupadas') is not null) drop table #Vendas_Agrupadas
 select
 	convert(varchar(6), Dt_Venda, 112) as Periodo,
@@ -69,6 +72,24 @@ from
 	#Vendas_Agrupadas
 
 -- Another example
+-- While example
+
+declare @SQL1 varchar(max) = '',
+		@Contador int = 1,
+		@Total int = (select count(*) from sys.tables)
+
+while(@Contador <= @Total)
+begin
+	select @SQL1 = @SQL1 + 'TRUNCATE TABLE [' + B.[name] + '].[' + A.[name] + ']; '
+	from sys.tables A
+	join sys.schemas B on B.[schema_id] = A.[schema_id]
+
+	set @Contador += 1
+end
+
+select @SQL1
+
+-- Without While
 
 declare @SQL2 varchar(max) = ''
 
